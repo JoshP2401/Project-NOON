@@ -50,6 +50,7 @@ function App() {
       })
       .catch((err) => console.log(err));
   };
+  console.log(currentWeather);
 
   return (
     <Container sx={{ bgcolor: "white", height: "100vh" }}>

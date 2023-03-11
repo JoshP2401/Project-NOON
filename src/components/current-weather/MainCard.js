@@ -21,13 +21,12 @@ const MediaCard = ({ data }) => {
     CUR_WEEK_DAYS.length
   ).concat(CUR_WEEK_DAYS.slice(0, newDayInAWeek));
   const temp = Math.round(data.airTemperature.noaa);
-  const fTemp = Math.round((temp * 9) / 5 + 32);
 
   return (
     <Card sx={{ justifyContent: "flex-end" }}>
       <CardContent>
         <Typography gutterBottom variant="h4" component="div" color="#00a8f3">
-          {curDay[0]}
+          {curDay[6]}
         </Typography>
         <Typography gutterBottom variant="h5" component="div">
           {data.city}

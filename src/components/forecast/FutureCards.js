@@ -32,7 +32,7 @@ const FutureCardForecast = ({ data }) => {
           sx={{ bgcolor: "#00a8f3", ":hover": { bgcolor: "#5ec4ff" } }}
         >
           <Typography sx={{ color: "white", fontSize: "1rem" }}>
-            <strong>{forecastDays[1]}</strong>
+            <strong>{forecastDays[0]}</strong>
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -65,7 +65,7 @@ const FutureCardForecast = ({ data }) => {
           sx={{ bgcolor: "#00a8f3", ":hover": { bgcolor: "#5ec4ff" } }}
         >
           <Typography sx={{ color: "white", fontSize: "1rem" }}>
-            <strong>{forecastDays[2]}</strong>
+            <strong>{forecastDays[1]}</strong>
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -98,7 +98,7 @@ const FutureCardForecast = ({ data }) => {
           sx={{ bgcolor: "#00a8f3", ":hover": { bgcolor: "#5ec4ff" } }}
         >
           <Typography sx={{ color: "white", fontSize: "1rem" }}>
-            <strong>{forecastDays[3]}</strong>
+            <strong>{forecastDays[2]}</strong>
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -132,7 +132,7 @@ const FutureCardForecast = ({ data }) => {
           sx={{ bgcolor: "#00a8f3", ":hover": { bgcolor: "#5ec4ff" } }}
         >
           <Typography sx={{ color: "white", fontSize: "1rem" }}>
-            <strong>{forecastDays[4]}</strong>
+            <strong>{forecastDays[3]}</strong>
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -166,7 +166,7 @@ const FutureCardForecast = ({ data }) => {
           sx={{ bgcolor: "#00a8f3", ":hover": { bgcolor: "#5ec4ff" } }}
         >
           <Typography sx={{ color: "white", fontSize: "1rem" }}>
-            <strong>{forecastDays[5]}</strong>
+            <strong>{forecastDays[4]}</strong>
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -204,7 +204,7 @@ const FutureCardForecast = ({ data }) => {
           sx={{ bgcolor: "#00a8f3", ":hover": { bgcolor: "#5ec4ff" } }}
         >
           <Typography sx={{ color: "white", fontSize: "1rem" }}>
-            <strong>{forecastDays[6]}</strong>
+            <strong>{forecastDays[5]}</strong>
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
