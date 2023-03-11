@@ -7,10 +7,29 @@ import FutureCardForecast from "./components/forecast/FutureCards";
 import NoonWeather2 from "./images/NoonWeather2.png";
 import EasterEgg from "./components/easter-eggs/EasterEgg";
 import FooterImage from "./images/FooterImage.png";
+import Button from "@mui/material/Button";
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
   const [forecastWeather, setForecastWeather] = useState(null);
+  const [currentTemp, setCurrentTemp] = useState(null);
+  let tempName = "";
+
+  if (currentTemp === null) {
+    tempName = "Fahrenheit";
+  } else if (currentTemp === "celsius") {
+    tempName = "Fahrenheit";
+  } else if (currentTemp === "fahrenheit") {
+    tempName = "Celsius";
+  }
+
+  const handleClick = () => {
+    if (currentTemp === null || currentTemp === "celsius") {
+      setCurrentTemp("fahrenheit");
+    } else if (currentTemp === "fahrenheit") {
+      setCurrentTemp("celsius");
+    }
+  };
 
   const handleOnSearchChange = (searchData) => {
     const [lat, lon] = searchData.value.split(" ");
@@ -51,14 +70,24 @@ function App() {
       .catch((err) => console.log(err));
   };
   console.log(currentWeather);
+  console.log(currentTemp);
 
   return (
     <Container sx={{ bgcolor: "white", height: "100vh" }}>
       <img src={NoonWeather2} alt="logo" width="35%" />
       <Search onSearchChange={handleOnSearchChange} />
-      {currentWeather && <MediaCard data={currentWeather} />}
-      {currentWeather && <FutureCardForecast data={forecastWeather.days} />}
+      {currentWeather && (
+        <MediaCard data={currentWeather} curTemp={currentTemp} />
+      )}
+      {currentWeather && (
+        <FutureCardForecast data={forecastWeather.days} curTemp={currentTemp} />
+      )}
       {currentWeather && <EasterEgg data={currentWeather} />}
+      {currentWeather && (
+        <Button sx={{ my: 2 }} variant="outlined" onClick={handleClick}>
+          Convert to {tempName}
+        </Button>
+      )}
       <img src={FooterImage} alt="footer" width="100%" />
     </Container>
   );

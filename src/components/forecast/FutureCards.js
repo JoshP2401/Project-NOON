@@ -16,11 +16,39 @@ const WEEK_DAYS = [
   "SUNDAY",
 ];
 
-const FutureCardForecast = ({ data }) => {
+const FutureCardForecast = ({ data, curTemp }) => {
   const dayInAWeek = new Date().getDay();
   const forecastDays = WEEK_DAYS.slice(dayInAWeek, WEEK_DAYS.length).concat(
     WEEK_DAYS.slice(0, dayInAWeek)
   );
+
+  let temp = "";
+
+  const celc = [
+    Math.round(data[0].airTemperature.noaa) + "°C",
+    Math.round(data[1].airTemperature.noaa) + "°C",
+    Math.round(data[2].airTemperature.noaa) + "°C",
+    Math.round(data[3].airTemperature.noaa) + "°C",
+    Math.round(data[4].airTemperature.noaa) + "°C",
+    Math.round(data[5].airTemperature.noaa) + "°C",
+  ];
+
+  const fahr = [
+    Math.round((data[0].airTemperature.noaa * 9) / 5 + 32) + "°F",
+    Math.round((data[1].airTemperature.noaa * 9) / 5 + 32) + "°F",
+    Math.round((data[2].airTemperature.noaa * 9) / 5 + 32) + "°F",
+    Math.round((data[3].airTemperature.noaa * 9) / 5 + 32) + "°F",
+    Math.round((data[4].airTemperature.noaa * 9) / 5 + 32) + "°F",
+    Math.round((data[5].airTemperature.noaa * 9) / 5 + 32) + "°F",
+  ];
+
+  if (curTemp === null) {
+    temp = celc;
+  } else if (curTemp === "celsius") {
+    temp = celc;
+  } else if (curTemp === "fahrenheit") {
+    temp = fahr;
+  }
 
   return (
     <div>
@@ -37,7 +65,7 @@ const FutureCardForecast = ({ data }) => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography gutterBottom variant="h4" component="div" color="#00a8f3">
-            {Math.round(data[0].airTemperature.noaa)}°C
+            {temp[0]}
           </Typography>
           <Typography> Details: </Typography>
           <Typography className="info">
@@ -70,7 +98,7 @@ const FutureCardForecast = ({ data }) => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography gutterBottom variant="h4" component="div" color="#00a8f3">
-            {Math.round(data[1].airTemperature.noaa)}°C
+            {temp[1]}
           </Typography>
           <Typography> Details</Typography>
           <Typography className="info">
@@ -103,7 +131,7 @@ const FutureCardForecast = ({ data }) => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography gutterBottom variant="h4" component="div" color="#00a8f3">
-            {Math.round(data[2].airTemperature.noaa)}°C
+            {temp[2]}
           </Typography>
           <Typography> Details</Typography>
           <Typography className="info">
@@ -137,7 +165,7 @@ const FutureCardForecast = ({ data }) => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography gutterBottom variant="h4" component="div" color="#00a8f3">
-            {Math.round(data[3].airTemperature.noaa)}°C
+            {temp[3]}
           </Typography>
           <Typography> Details</Typography>
           <Typography className="info">
@@ -171,7 +199,7 @@ const FutureCardForecast = ({ data }) => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography gutterBottom variant="h4" component="div" color="#00a8f3">
-            {Math.round(data[4].airTemperature.noaa)}°C
+            {temp[4]}
           </Typography>
           <Typography> Details</Typography>
           <Typography className="info">
@@ -209,7 +237,7 @@ const FutureCardForecast = ({ data }) => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography gutterBottom variant="h4" component="div" color="#00a8f3">
-            {Math.round(data[5].airTemperature.noaa)}°C
+            {temp[5]}
           </Typography>
           <Typography> Details</Typography>
           <Typography className="info">

@@ -14,13 +14,23 @@ const CUR_WEEK_DAYS = [
   "SUNDAY",
 ];
 
-const MediaCard = ({ data }) => {
+const MediaCard = ({ data, curTemp }) => {
   const newDayInAWeek = new Date().getDay();
   const curDay = CUR_WEEK_DAYS.slice(
     newDayInAWeek,
     CUR_WEEK_DAYS.length
   ).concat(CUR_WEEK_DAYS.slice(0, newDayInAWeek));
-  const temp = Math.round(data.airTemperature.noaa);
+  const tempC = Math.round(data.airTemperature.noaa) + "°C";
+  const tempF = Math.round((data.airTemperature.noaa * 9) / 5 + 32) + "°F";
+  let temp = "";
+
+  if (curTemp === null) {
+    temp = tempC;
+  } else if (curTemp === "celsius") {
+    temp = tempC;
+  } else if (curTemp === "fahrenheit") {
+    temp = tempF;
+  }
 
   return (
     <Card sx={{ justifyContent: "flex-end" }}>
@@ -32,7 +42,7 @@ const MediaCard = ({ data }) => {
           {data.city}
         </Typography>
         <Typography gutterBottom variant="h2" component="div" color="#00a8f3">
-          {temp}°C
+          {temp}
         </Typography>
         <Typography gutterBottom variant="h9" component="div">
           Details
