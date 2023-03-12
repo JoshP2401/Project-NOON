@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Project-NOON/static/css/main.04590b82.css",
+    "main.js": "/Project-NOON/static/js/main.609d8605.js",
+    "static/js/787.2d03ddd3.chunk.js": "/Project-NOON/static/js/787.2d03ddd3.chunk.js",
+    "static/media/cry-matt-mercer.gif": "/Project-NOON/static/media/cry-matt-mercer.e5879b3e055c45e82997.gif",
+    "static/media/ChrisSS.png": "/Project-NOON/static/media/ChrisSS.b4607429d96e2a7ed4b8.png",
+    "index.html": "/Project-NOON/index.html",
+    "main.04590b82.css.map": "/Project-NOON/static/css/main.04590b82.css.map",
+    "main.609d8605.js.map": "/Project-NOON/static/js/main.609d8605.js.map",
+    "787.2d03ddd3.chunk.js.map": "/Project-NOON/static/js/787.2d03ddd3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.04590b82.css",
+    "static/js/main.609d8605.js"
+  ]
+}
