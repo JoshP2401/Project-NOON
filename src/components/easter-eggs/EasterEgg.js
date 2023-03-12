@@ -4,6 +4,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import CryMatt from "./cry-matt-mercer.gif";
 import travelChris from "./ChrisSS.png";
+import climbMikl from "./FlatangerMichael.png";
 
 const EasterEgg = ({ data }) => {
   if (data.city.includes("Switzerland") === true) {
@@ -46,13 +47,27 @@ const EasterEgg = ({ data }) => {
     );
   }
 
-  if (data.city.includes("San Sebastián") === true) {
+  if (data.city.includes("stia-San Sebastián") === true) {
     return (
       <Card>
         <center>
           <CardContent>
             <Typography>
               <img src={travelChris} alt="Chris travel" width="50%%" />
+            </Typography>
+          </CardContent>
+        </center>
+      </Card>
+    );
+  }
+
+  if (data.city.includes("Flatanger") === true) {
+    return (
+      <Card>
+        <center>
+          <CardContent>
+            <Typography>
+              <img src={climbMikl} alt="Chris travel" width="50%%" />
             </Typography>
           </CardContent>
         </center>

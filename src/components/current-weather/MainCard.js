@@ -14,12 +14,33 @@ const CUR_WEEK_DAYS = [
   "SUNDAY",
 ];
 
+const CUR_MONTH = [
+  "JANUARY",
+  "FEBRUARY",
+  "MARCH",
+  "APRIL",
+  "MAY",
+  "JUNE",
+  "JULY",
+  "AUGUST",
+  "SEPTEMBER",
+  "OCTOBER",
+  "NOVEMBER",
+  "DECEMBER",
+];
+
 const MediaCard = ({ data, curTemp }) => {
+  const today = new Date().getDate();
   const newDayInAWeek = new Date().getDay();
+  const newMonth = new Date().getMonth();
   const curDay = CUR_WEEK_DAYS.slice(
     newDayInAWeek,
     CUR_WEEK_DAYS.length
   ).concat(CUR_WEEK_DAYS.slice(0, newDayInAWeek));
+
+  const curMon = CUR_MONTH.slice(newMonth, CUR_MONTH.length).concat(
+    CUR_MONTH.slice(0, newMonth)
+  );
   const tempC = Math.round(data.airTemperature.noaa) + "°C";
   const tempF = Math.round((data.airTemperature.noaa * 9) / 5 + 32) + "°F";
   let temp = "";
@@ -38,6 +59,15 @@ const MediaCard = ({ data, curTemp }) => {
         <Typography gutterBottom variant="h4" component="div" color="#00a8f3">
           {curDay[6]}
         </Typography>
+        <Typography
+          gutterBottom
+          variant="20"
+          component="div"
+          color="text.secondary"
+          sx={{ my: 2 }}
+        >
+          {today} {curMon[0]}
+        </Typography>
         <Typography gutterBottom variant="h5" component="div">
           {data.city}
         </Typography>
@@ -47,6 +77,7 @@ const MediaCard = ({ data, curTemp }) => {
         <Typography gutterBottom variant="h9" component="div">
           Details
         </Typography>
+
         <Typography variant="body2" color="text.secondary">
           Precipitation: {data.precipitation.noaa}mm/h
         </Typography>
