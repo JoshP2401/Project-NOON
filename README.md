@@ -4,7 +4,7 @@ Noon is a React-based weather app that provides users with both current weather 
 
 This file is available as publically hosted domain @https://joshp2401.github.io/Project-NOON/ and can also be run by opening your terminal -> running npm start.
 
-This App features an accordion menu, a convenient way to display the forecast for the next 7 days. This type of menu allows users to easily navigate between days by expanding and collapsing individual panels for each day. Each panel typically displays the day of the week, date, and a brief summary of the weather conditions for that day, such as temperature, precipitation, and wind speed. Users can click on a panel to expand it and view more detailed information about the weather forecast for that day.
+This App features an accordion menu, a convenient way to display the forecast for the next 7 days. This type of menu allows users to easily navigate between days by expanding and collapsing individual panels for each day. Each panel typically displays the day of the week and a brief summary of the weather conditions for that day, such as temperature, precipitation, and wind speed. Users can click on a panel to expand it and view more detailed information about the weather forecast for that day.
 
 The Celsius to Fahrenheit button is a user-friendly feature that allows users to switch between temperature units on a weather app or website. By clicking on the button, users can choose to see the temperature displayed either in Celsius or Fahrenheit, depending on their preference. This button is especially useful for users who are more familiar with one temperature scale over the other, or who need to convert the temperature to a different unit for a specific purpose.
 
